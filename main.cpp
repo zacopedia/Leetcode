@@ -662,8 +662,15 @@ void findHighestFrequency () {
 
 // ///////////////////////////////////////////////
 
-// 4- Ask the user to enter 10 numbers
+// 4- Ask the user to enter 5 numbers
 // Count how many numbers appear only once (unique elements)
+
+void countAppearNum () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    
+}
 
 // ///////////////////////////////////////////////
 
@@ -747,7 +754,8 @@ int main () {
     ////// Counting / Frequency
     // countNumbers ();
     // findNumbers ();
-    findHighestFrequency ();
+    // findHighestFrequency ();
+    countAppearNum ();
     return 0;
 }
 
