@@ -669,7 +669,31 @@ void countAppearNum () {
     cout << "Enter 5 Numbers\n";
     int arr[5];
 
-    
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+
+        if (alreadyProcessed )continue;
+
+        int freq = 0;
+        for (int k = 0; k < 5; k++) {
+            if (arr[i] == arr[k]) {
+                count++;
+            }
+        }
+    }
+
+    cout << "The Numbers That Appear Only Once Is: " << count << endl;
 }
 
 // ///////////////////////////////////////////////
