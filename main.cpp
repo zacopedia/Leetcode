@@ -742,6 +742,44 @@ void countPairs () {
 // 6- Ask the user to enter 10 numbers
 // Find all numbers that appear more than 2 times
 
+void findNumAppear2Times () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    int count = 0;
+
+    // Check If Already Processed
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+        if (alreadyProcessed) continue;
+
+        // Count Frequency
+
+        int freq = 0;
+        for (int k = 0; k < 5; k++) {
+            if (arr[i] == arr[k]) {
+                freq++;
+            }
+        }
+        
+        // Find The Number That Appear 2 times
+        if (freq > 2) {
+            count++;
+        }
+    }
+
+    cout << "The Number That Appear 2 times Is: " << count << endl;
+}
+
 // ///////////////////////////////////////////////
 
 // 7- Ask the user to enter 10 numbers
@@ -816,7 +854,8 @@ int main () {
     // findNumbers ();
     // findHighestFrequency ();
     // countAppearNum ();
-    countPairs ();
+    // countPairs ();
+    findNumAppear2Times ();
     return 0;
 }
 
