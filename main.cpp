@@ -688,8 +688,12 @@ void countAppearNum () {
         int freq = 0;
         for (int k = 0; k < 5; k++) {
             if (arr[i] == arr[k]) {
-                count++;
+                freq++;
             }
+        }
+
+        if (freq == 1) {
+            count++;
         }
     }
 
