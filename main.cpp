@@ -702,8 +702,40 @@ void countAppearNum () {
 
 // ///////////////////////////////////////////////
 
-// 5- Ask the user to enter 10 numbers
+// 5- Ask the user to enter 5 numbers
 // Count how many pairs exist (example: [2,2] is one pair)
+
+void countPairs () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[5];
+    }
+
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+        if (alreadyProcessed) continue;
+
+        int freq = 0;
+        for (int k = 0; k < 5; k++) {
+            if (arr[i] == arr[k]) {
+                freq++;
+            }
+        }
+
+        count += freq / 2;
+    }
+
+    cout << "There Is " << count << "Pairs" << endl;
+}
 
 // ///////////////////////////////////////////////
 
@@ -783,7 +815,8 @@ int main () {
     // countNumbers ();
     // findNumbers ();
     // findHighestFrequency ();
-    countAppearNum ();
+    // countAppearNum ();
+    countPairs ();
     return 0;
 }
 
