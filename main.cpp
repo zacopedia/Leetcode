@@ -739,7 +739,7 @@ void countPairs () {
 
 // ///////////////////////////////////////////////
 
-// 6- Ask the user to enter 10 numbers
+// 6- Ask the user to enter 5 numbers
 // Find all numbers that appear more than 2 times
 
 void findNumAppear2Times () {
@@ -773,11 +773,11 @@ void findNumAppear2Times () {
         
         // Find The Number That Appear 2 times
         if (freq > 2) {
-            count++;
+            cout << "The Number That Appear 2 times Is: " << arr[i] << endl;
         }
     }
 
-    cout << "The Number That Appear 2 times Is: " << count << endl;
+    
 }
 
 // ///////////////////////////////////////////////
