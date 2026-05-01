@@ -782,47 +782,71 @@ void findNumAppear2Times () {
 
 // ///////////////////////////////////////////////
 
-// 7- Ask the user to enter 10 numbers
+// 7- Ask the user to enter 5 numbers
 // Count how many distinct numbers exist
+
+void countDistinct () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+    
+    int count = 0;
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+        if (alreadyProcessed) continue;
+        else cout << "There Is Distinct: " << count << endl;
+    }
+    
+
+    
+}
 
 // ///////////////////////////////////////////////
 
-// 8- Ask the user to enter 10 numbers
+// 8- Ask the user to enter 5 numbers
 // Find the first number that repeats
 
 // ///////////////////////////////////////////////
 
-// 9- Ask the user to enter 10 numbers
+// 9- Ask the user to enter 5 numbers
 // Find the last number that repeats
 
 // ///////////////////////////////////////////////
 
-// 10- Ask the user to enter 10 numbers
+// 10- Ask the user to enter 5 numbers
 // Check if all numbers are unique
 
 // ///////////////////////////////////////////////
 
-// Ask the user to enter 10 numbers
+// Ask the user to enter 5 numbers
 // Find the frequency of each number (print number + count)
 
 // ///////////////////////////////////////////////
 
-// 11- Ask the user to enter 10 numbers
+// 11- Ask the user to enter 5 numbers
 // Find the number with the lowest frequency
 
 // ///////////////////////////////////////////////
 
-// 12- Ask the user to enter 10 numbers
+// 12- Ask the user to enter 5 numbers
 // Count how many numbers appear an even number of times
 
 // ///////////////////////////////////////////////
 
-// 13- Ask the user to enter 10 numbers
+// 13- Ask the user to enter 5 numbers
 // Remove duplicates conceptually and count unique remaining elements
 
 // ///////////////////////////////////////////////
 
-// 14- Ask the user to enter 10 numbers
+// 14- Ask the user to enter 5 numbers
 // Find all numbers that appear exactly once and print them
 
 
@@ -855,7 +879,8 @@ int main () {
     // findHighestFrequency ();
     // countAppearNum ();
     // countPairs ();
-    findNumAppear2Times ();
+    // findNumAppear2Times ();
+    countDistinct ();
     return 0;
 }
 
