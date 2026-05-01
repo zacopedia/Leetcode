@@ -799,14 +799,15 @@ void countDistinct () {
         for (int j = 0; j < i; j++) {
             if (arr[i] == arr[j]) {
                 alreadyProcessed = true;
+                break;
             }
         }
-        if (alreadyProcessed) continue;
-        else cout << "There Is Distinct: " << count << endl;
+        if (alreadyProcessed){
+            count++;
+        }
     }
     
-
-    
+    cout << "There Is Distinct: " << count << endl;
 }
 
 // ///////////////////////////////////////////////
