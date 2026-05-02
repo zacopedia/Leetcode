@@ -840,6 +840,24 @@ void findFirstRepeat () {
 // 9- Ask the user to enter 5 numbers
 // Find the last number that repeats
 
+void findLastRepeat () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = i + 1; j < i - 1; j--) {
+                if (arr[i] == arr[j]) {
+                    cout << arr[i] << endl;
+                    return;
+                }
+        }
+    }
+}
+
 // ///////////////////////////////////////////////
 
 // 10- Ask the user to enter 5 numbers
@@ -902,7 +920,8 @@ int main () {
     // countPairs ();
     // findNumAppear2Times ();
     // countDistinct ();
-    findFirstRepeat ();
+    // findFirstRepeat ();
+    findLastRepeat ();
     return 0;
 }
 
