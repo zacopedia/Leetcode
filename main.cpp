@@ -877,10 +877,20 @@ void checkUniqueNumbers () {
     for (int i = 0; i < 5; i++) {
         cin >> arr[i];
     }
+    
+    bool unique = true;
 
     for (int i = 0; i < 5; i++) {
-        
+        for (int j = i + 1; j < 5; j++) {
+            if (arr[i] == arr[j]) {
+                    unique = false;
+                    break;
+            }
+        }
     }
+
+    if (unique) cout << "All Numbers Are Unique" << endl;
+    else cout << "The Numbers Are Not Unique" << endl;
 }
 
 // ///////////////////////////////////////////////
@@ -888,10 +898,78 @@ void checkUniqueNumbers () {
 // Ask the user to enter 5 numbers
 // Find the frequency of each number (print number + count)
 
+void findFreqNumber () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    int count = 0;
+
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+
+        if (alreadyProcessed) continue;
+
+        int freq = 0;
+        for (int k = 0; k < 5; k++) {
+            if (arr[i] == arr[k]) {
+                freq++;
+            }
+        }
+
+        
+            cout << arr[i] << "in" << freq << endl;
+        
+    }
+}
+
 // ///////////////////////////////////////////////
 
 // 11- Ask the user to enter 5 numbers
 // Find the number with the lowest frequency
+
+void findLowestNumber () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+int minFreq = 5;
+int minNumber = arr[0];
+    for (int i = 0; i < 5; i++) {
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                alreadyProcessed = true;
+            }
+        }
+
+        if (alreadyProcessed) continue;
+
+        int freq = 0;
+        for (int k = 0; k < 5; k++) {
+            if (arr[i] == arr[k]) {
+                freq++;
+            }
+        }
+        
+        if (freq < minFreq) {
+            minFreq = freq;
+            minNumber = arr[i];
+        }
+    }
+    cout << "The Number with The Lowest Frequency Is: " << minFreq << endl;
+
+}
 
 // ///////////////////////////////////////////////
 
@@ -942,7 +1020,8 @@ int main () {
     // countDistinct ();
     // findFirstRepeat ();
     // findLastRepeat ();
-    checkUniqueNumbers ();
+    // checkUniqueNumbers ();
+    findFreqNumber ();
     return 0;
 }
 
