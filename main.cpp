@@ -870,6 +870,19 @@ void findLastRepeat () {
 // 10- Ask the user to enter 5 numbers
 // Check if all numbers are unique
 
+void checkUniqueNumbers () {
+    cout << "Enter 5 Numbers\n";
+    int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < 5; i++) {
+        
+    }
+}
+
 // ///////////////////////////////////////////////
 
 // Ask the user to enter 5 numbers
@@ -928,7 +941,8 @@ int main () {
     // findNumAppear2Times ();
     // countDistinct ();
     // findFirstRepeat ();
-    findLastRepeat ();
+    // findLastRepeat ();
+    checkUniqueNumbers ();
     return 0;
 }
 
