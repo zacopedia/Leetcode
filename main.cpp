@@ -848,14 +848,21 @@ void findLastRepeat () {
         cin >> arr[i];
     }
 
+    int lastRepeatedNumber = 0;
+    bool found = false;
+
     for (int i = 0; i < 5; i++) {
-        for (int j = i + 1; j < i - 1; j--) {
+        for (int j = i + 1; j < 5; j++) {
                 if (arr[i] == arr[j]) {
-                    cout << arr[i] << endl;
-                    return;
+                    lastRepeatedNumber = arr[i];
+                    found = true;
                 }
         }
     }
+
+    if (found) cout << "The Last Repeat Number Is: " << lastRepeatedNumber << endl;
+    else cout << "No Last Repeat Number " << endl;
+
 }
 
 // ///////////////////////////////////////////////
