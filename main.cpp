@@ -980,7 +980,7 @@ int minNumber = arr[0];
 // Ask the user to enter N numbers
 // Count how many times each number appears
 
-void countEachNumber () {
+void frequencyEx1 () {
     int n;
     cout << "Enter N" << endl;
     cin >> n;
@@ -996,7 +996,6 @@ void countEachNumber () {
     for (auto p : freq) {
         cout << p.first << " -> " << p.second << endl;
     }
-    
 }
 
 // ///////////////////////////////////////////////
@@ -1004,10 +1003,62 @@ void countEachNumber () {
 // Ask the user to enter N numbers
 // Find the number that appears the most times
 
+void frequencyEx2 () {
+    cout << "Enter N" << endl;
+    int n;
+    cin >> n;
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+    cout << "======== Result ========" << endl;
+    int mostFreq = 0;
+    int answer = 0;
+    for (auto p : freq) {
+        if (p.second > mostFreq) {
+            mostFreq = p.second;
+            answer = p.first;
+
+        }
+    }
+    cout << "Most Frequent Number: " << answer << endl;
+    cout << "Frequency: " << mostFreq << endl;
+}
+
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Find the number that appears the least times
+
+void frequencyEx3 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+
+    cout << "====== Result =====" << endl;
+    int leastFreq = n;
+    int answer = 0;
+
+    for (auto p : freq) {
+        if (p.second < leastFreq) {
+            leastFreq = p.second;
+            answer = p.first;
+        }
+    }
+    cout << "Least Frequent Number: " << answer << endl;
+    cout << "Frequency: " << leastFreq << endl;
+}
 
 // ///////////////////////////////////////////////
 
@@ -1105,8 +1156,9 @@ int main () {
     // findFirstRepeat ();
     // findLastRepeat ();
     // checkUniqueNumbers ();
-    cout << "Program started\n";
-    countEachNumber ();
+    // frequencyEx1 ();
+    // frequencyEx2 ();
+    frequencyEx3 ();
     return 0;
 }
 
