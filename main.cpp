@@ -1065,30 +1065,182 @@ void frequencyEx3 () {
 // Ask the user to enter N numbers
 // Count how many numbers appear exactly once
 
+void frequencyEx4 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+
+    int count = 0;
+
+    for (auto p : freq) {
+        if (p.second == 1) {
+            count++;
+        }
+    }
+
+    cout << count << " Number Appera Once" << endl;
+}
+
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Check if all elements are unique
+
+void frequencyEx5 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+
+    bool unique = true;
+
+    for (auto p : freq) {
+        if (p.second > 1) {
+            unique = false;
+        }
+    }
+
+    if (unique) {
+        cout << "All Elements Are Unique" << endl;
+    } else {
+        cout << "Not All Elements Are Unique" << endl;
+    }
+}
 
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Count how many numbers are duplicated
 
+void frequencyEx6 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+    int count = 0;
+    for (auto p : freq) {
+        if (p.second > 1) {
+            count++;
+        }
+    }
+
+    cout << "There Is " << count << "Duplicated Number" << endl;
+}
+
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Find the first number that repeats
 
+void frequencyEx7 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+    
+    vector<int>nums;
+    unordered_map<int,int>freq;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        nums.push_back(num);
+        freq[num]++;
+    }
+
+    for (int num : nums) {
+
+        if (freq[num] > 1) {
+            cout << num << endl;
+            break;
+        }
+    }
+}
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Find all numbers that appear more than once
 
+void frequencyEx8 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+    
+    vector<int>nums;
+    unordered_map<int,int>freq;
+
+    cout << "======" << endl;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        nums.push_back(num);
+        freq[num]++; 
+    }
+
+    for (auto p : freq) {
+        if (p.second > 1) {
+            cout << p.first << endl;
+        }
+    }
+}
+
 // ///////////////////////////////////////////////
 
 // Ask the user to enter N numbers
 // Count frequency of even and odd numbers
+
+void frequencyEx9 () {
+    int n;
+    cout << "Enter N" << endl;
+    cin >> n;
+    
+    
+    unordered_map<int,int>freq;
+
+    cout << "======" << endl;
+
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        freq[num]++;
+    }
+
+    int countEven = 0;
+    int countOdd = 0;
+
+    for (auto p : freq) {
+        if (p.first % 2 == 0) {
+            countEven += p.second;
+        } else {
+            countOdd += p.second;
+        }
+    }
+
+    cout << "Even Numbers :" << countEven << " Even" << endl;
+    cout << "Even Numbers :" << countOdd << " Odd" << endl;
+}
 
 // ///////////////////////////////////////////////
 
@@ -1158,7 +1310,13 @@ int main () {
     // checkUniqueNumbers ();
     // frequencyEx1 ();
     // frequencyEx2 ();
-    frequencyEx3 ();
+    // frequencyEx3 ();
+    // frequencyEx4 ();
+    // frequencyEx5 ();
+    // frequencyEx6 ();
+    // frequencyEx7 ();
+    // frequencyEx8 ();
+    frequencyEx9 ();
     return 0;
 }
 
